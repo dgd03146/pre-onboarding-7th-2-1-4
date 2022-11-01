@@ -17,7 +17,7 @@ export default Layout;
 
 const Container = styled.div`
   margin: 0 auto;
-
+  border: 1px solid #ececec;
   max-width: 450px;
   min-width: 360px;
 `;

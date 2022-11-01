@@ -1,5 +1,5 @@
 import { Button, Divider } from "@/layouts";
-import { categories } from "@/lib/constants/Sizes";
+import { categories } from "@/lib/constants/constants";
 import { useState } from "react";
 import styled from "styled-components";
 

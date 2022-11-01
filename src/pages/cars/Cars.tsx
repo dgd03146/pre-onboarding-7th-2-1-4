@@ -1,4 +1,5 @@
 import { Category } from "@/components";
+import { Loading } from "@/layouts";
 import styled from "styled-components";
 
 const Cars = () => {
