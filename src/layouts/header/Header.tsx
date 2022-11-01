@@ -10,6 +10,7 @@ export const Header = ({ page }: HeaderProps) => {
   const navigate = useNavigate();
   return (
     <Container page={page}>
+      {/* TODO: svg 파일 따로 정리하기 */}
       {page && (
         <button
           className="back"

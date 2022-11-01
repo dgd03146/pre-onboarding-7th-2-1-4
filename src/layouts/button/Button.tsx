@@ -6,11 +6,18 @@ interface ButtonProps {
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   color?: "gray" | "blue";
   size?: "medium" | "small";
+  active?: boolean;
 }
 
-export const Button = ({ children, onClick, color, size }: ButtonProps) => {
+export const Button = ({
+  children,
+  onClick,
+  color,
+  size,
+  active
+}: ButtonProps) => {
   return (
-    <Container onClick={onClick} color={color} size={size}>
+    <Container onClick={onClick} color={color} size={size} active={active}>
       {children}
     </Container>
   );
@@ -18,19 +25,17 @@ export const Button = ({ children, onClick, color, size }: ButtonProps) => {
 
 const Container = styled.button<{
   size: string | undefined;
+  active: boolean | undefined;
 }>`
   padding: 5px 18px;
   gap: 10px;
-  width: 62px;
-  height: 27px;
-  left: 20px;
-  top: 20px;
   border-radius: 62px;
   border: none;
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
   line-height: 17px;
+
   background-color: ${(props) => props.theme.color.gray};
   color: ${(props) => props.theme.color.black};
 
@@ -49,6 +54,13 @@ const Container = styled.button<{
         color: ${props.theme.color.white};
       `}
   }
+
+  ${({ active }) =>
+    active &&
+    css`
+      background-color: ${(props) => props.theme.color.black};
+      color: ${(props) => props.theme.color.white};
+    `}
 `;
 
 Button.defaultProps = {

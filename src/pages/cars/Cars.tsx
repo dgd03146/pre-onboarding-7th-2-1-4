@@ -1,7 +1,14 @@
-import React from "react";
+import { Category } from "@/components";
+import styled from "styled-components";
 
 const Cars = () => {
-  return <div>cars</div>;
+  return (
+    <Container>
+      <Category />
+    </Container>
+  );
 };
 
 export default Cars;
+
+const Container = styled.div``;
