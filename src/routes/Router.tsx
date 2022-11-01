@@ -6,7 +6,7 @@ const Router = () => {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Cars />} />
-        <Route path="/:fuelType" element={<CarDetail />} />
+        <Route path="/:car_number" element={<CarDetail />} />
       </Route>
     </Routes>
   );

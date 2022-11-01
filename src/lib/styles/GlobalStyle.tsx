@@ -18,6 +18,11 @@ const GlobalStyle = createGlobalStyle`
     }
     button{
       font-family: "Inter";
+      outline: none;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
     }
 `;
 

@@ -19,8 +19,6 @@ export const Button = ({ children, onClick, color, size }: ButtonProps) => {
 const Container = styled.button<{
   size: string | undefined;
 }>`
-  cursor: pointer;
-
   padding: 5px 18px;
   gap: 10px;
   width: 62px;
