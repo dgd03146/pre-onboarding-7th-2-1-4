@@ -10,6 +10,7 @@ import { queryClient } from "./lib";
 import { Loading } from "./layouts";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { RecoilRoot } from "recoil";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -18,11 +19,13 @@ root.render(
   <ThemeProvider theme={theme}>
     <BrowserRouter>
       <QueryClientProvider client={queryClient}>
-        <Suspense fallback={<Loading />}>
-          <GlobalStyle />
-          <App />
-          <ToastContainer />
-        </Suspense>
+        <RecoilRoot>
+          <Suspense fallback={<Loading />}>
+            <GlobalStyle />
+            <App />
+            <ToastContainer />
+          </Suspense>
+        </RecoilRoot>
       </QueryClientProvider>
     </BrowserRouter>
   </ThemeProvider>

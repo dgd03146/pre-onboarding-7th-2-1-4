@@ -1,10 +1,19 @@
 import { Button, Divider } from "@/layouts";
 import { categories } from "@/lib/constants/constants";
+import { segState } from "@/lib/recoil/RecoilState";
 import { useState } from "react";
 import styled from "styled-components";
+import { useSetRecoilState } from "recoil";
 
 const Category = () => {
-  const [clicked, setClicked] = useState("전체");
+  const [clicked, setClicked] = useState("A");
+  const setSeg = useSetRecoilState(segState);
+
+  const selectSizeHandler = (segment: string) => {
+    setClicked(segment);
+    setSeg(segment);
+  };
+
   return (
     <Container>
       <Divider />
@@ -12,10 +21,8 @@ const Category = () => {
         {categories.map((it) => (
           <Button
             key={it.value}
-            active={it.seg === clicked}
-            onClick={() => {
-              setClicked(it.seg);
-            }}
+            active={it.value === clicked}
+            onClick={() => selectSizeHandler(it.value)}
           >
             {it.seg}
           </Button>

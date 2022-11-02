@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import Car from "./Car";
-import { useGetCars } from "@/lib";
 import { ICar } from "@/lib/interfaces/interface";
+import { useRecoilValue } from "recoil";
+import { carState } from "@/lib/recoil/RecoilState";
 
 const CarLists = () => {
-  const { cars } = useGetCars();
+  const cars = useRecoilValue(carState);
 
   return (
     <Container>
