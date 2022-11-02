@@ -1,4 +1,4 @@
-import { useError } from "@/lib/hooks/useError";
+import { useError } from "../hooks/useError";
 import { QueryClient } from "@tanstack/react-query";
 
 // query error
