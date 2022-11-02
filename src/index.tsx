@@ -8,6 +8,8 @@ import { Suspense } from "react";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./lib";
 import { Loading } from "./layouts";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -19,6 +21,7 @@ root.render(
         <Suspense fallback={<Loading />}>
           <GlobalStyle />
           <App />
+          <ToastContainer />
         </Suspense>
       </QueryClientProvider>
     </BrowserRouter>

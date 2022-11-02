@@ -1,20 +1,11 @@
-import { toast } from "react-toastify";
+import { useError } from "@/lib/hooks/useError";
 import { QueryClient } from "@tanstack/react-query";
 
 // query error
 function queryErrorHandler(error: unknown): void {
   const title =
     error instanceof Error ? error.message : "error connecting to server";
-  toast.error(title, {
-    position: "top-center",
-    autoClose: 1000,
-    hideProgressBar: true,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: "light"
-  });
+  useError(title);
 }
 
 export const queryClient = new QueryClient({

@@ -1,6 +1,7 @@
 import { Layout } from "@/layouts";
 import { Routes, Route } from "react-router-dom";
 import { Cars, CarDetail } from "@/pages";
+
 const Router = () => {
   return (
     <Routes>
