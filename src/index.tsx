@@ -11,6 +11,7 @@ import { Loading } from "./layouts";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { RecoilRoot } from "recoil";
+import { HelmetProvider } from "react-helmet-async";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -18,15 +19,17 @@ const root = ReactDOM.createRoot(
 root.render(
   <ThemeProvider theme={theme}>
     <BrowserRouter>
-      <QueryClientProvider client={queryClient}>
-        <RecoilRoot>
-          <Suspense fallback={<Loading />}>
-            <GlobalStyle />
-            <App />
-            <ToastContainer />
-          </Suspense>
-        </RecoilRoot>
-      </QueryClientProvider>
+      <HelmetProvider>
+        <QueryClientProvider client={queryClient}>
+          <RecoilRoot>
+            <Suspense fallback={<Loading />}>
+              <GlobalStyle />
+              <App />
+              <ToastContainer />
+            </Suspense>
+          </RecoilRoot>
+        </QueryClientProvider>
+      </HelmetProvider>
     </BrowserRouter>
   </ThemeProvider>
 );

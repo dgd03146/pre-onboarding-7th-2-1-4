@@ -10,3 +10,4 @@ export { queryClient } from "./querys/queryClient";
 export { queryKeys } from "./querys/keys/Keys";
 export { carApi } from "./api/api";
 export { segState, carState, typeState } from "./recoil/RecoilState";
+export { MetaTag } from "./seo/MetaTag";
