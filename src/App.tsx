@@ -1,7 +1,12 @@
+import { MetaTag } from "./lib";
 import Router from "./routes/Router";
 
 function App() {
-  return <Router />;
+  return (
+    <>
+      <Router />;
+    </>
+  );
 }
 
 export default App;

@@ -12,10 +12,12 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { RecoilRoot } from "recoil";
 import { HelmetProvider } from "react-helmet-async";
+// import { hydrateRoot } from "react-dom/client";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
 root.render(
   <ThemeProvider theme={theme}>
     <BrowserRouter>

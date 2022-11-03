@@ -3,7 +3,7 @@ import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { ICar } from "@/lib/interfaces/interface";
 import { Button, Divider } from "@/layouts";
-import { getDayDifference, priceToString } from "@/lib";
+import { getDayDifference, MetaTag, priceToString } from "@/lib";
 
 interface CarProps {
   car: ICar;
