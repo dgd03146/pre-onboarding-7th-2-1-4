@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import Car from "./Car";
-import { ICar } from "@/lib/interfaces/interface";
-import { useRecoilValue } from "recoil";
-import { carState } from "@/lib/recoil/RecoilState";
 import NoCar from "./NoCar";
+import { ICar } from "@/lib/interfaces/interface";
+import { carState } from "@/lib";
+import { useRecoilValue } from "recoil";
 
 const CarLists = () => {
   const cars = useRecoilValue(carState);

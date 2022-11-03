@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { ICar } from "@/lib/interfaces/interface";
 import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { Divider } from "@/layouts";
-import { priceToString } from "@/lib/constants/constants";
+import { ICar } from "@/lib/interfaces/interface";
+import { Button, Divider } from "@/layouts";
+import { getDayDifference, priceToString } from "@/lib";
 
 interface CarProps {
   car: ICar;
@@ -12,6 +12,7 @@ interface CarProps {
 const Car = ({ car }: CarProps) => {
   const navigate = useNavigate();
   const price = useMemo(() => priceToString(car.amount), []);
+  const isNew = useMemo(() => getDayDifference(car.createdAt), []);
   const { attribute: at } = car;
 
   return (
@@ -27,7 +28,14 @@ const Car = ({ car }: CarProps) => {
           <p>{`${at.segment} / ${at.fuelType}`}</p>
           <p>{`월 ${price}원 부터`}</p>
         </CarInfo>
-        <CarImage src={at.imageUrl} />
+        <ImageContainer>
+          <CarImage src={at.imageUrl} />
+          {isNew && (
+            <Button size="small" color="blue">
+              신규
+            </Button>
+          )}
+        </ImageContainer>
       </Container>
       <Divider />
     </>
@@ -62,7 +70,10 @@ const CarInfo = styled.div`
   }
 `;
 
-const CarImage = styled.img`
+const ImageContainer = styled.div`
+  position: relative;
   width: 152px;
-  right: 20px;
+`;
+const CarImage = styled.img`
+  width: 100%;
 `;

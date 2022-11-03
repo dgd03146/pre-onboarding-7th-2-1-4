@@ -1,9 +1,8 @@
-import { Button, Divider } from "@/layouts";
-import { categories } from "@/lib/constants/constants";
-import { segState } from "@/lib/recoil/RecoilState";
-import { useState } from "react";
 import styled from "styled-components";
+import { useState } from "react";
 import { useSetRecoilState } from "recoil";
+import { Button, Divider } from "@/layouts";
+import { categories, segState } from "@/lib";
 
 const Category = () => {
   const [clicked, setClicked] = useState("A");

@@ -38,6 +38,9 @@ const Container = styled.div`
   margin: 0 auto;
   border: 1px solid #ececec;
 
+  display: flex;
+  flex-direction: column;
+
   height: 100%;
   min-height: 100vh;
 

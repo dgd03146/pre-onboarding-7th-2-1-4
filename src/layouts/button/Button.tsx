@@ -27,7 +27,7 @@ const Container = styled.button<{
   size: string | undefined;
   active: boolean | undefined;
 }>`
-  padding: 5px 18px;
+  padding: 5px 10px;
   gap: 10px;
   border-radius: 62px;
   border: none;
@@ -38,6 +38,21 @@ const Container = styled.button<{
 
   background-color: ${(props) => props.theme.color.gray};
   color: ${(props) => props.theme.color.black};
+
+  ${(props) =>
+    props.size === "small" &&
+    css`
+      position: absolute;
+      right: 0px;
+      top: -5px;
+      padding: 4px 15px;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      border-radius: 42px;
+    `}
 
   ${(props) =>
     props.color === "blue" &&

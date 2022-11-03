@@ -2,7 +2,8 @@ export const categories = [
   { seg: "전체", value: "A" },
   { seg: "대형", value: "E" },
   { seg: "중형", value: "D" },
-  { seg: "소형", value: "C" }
+  { seg: "소형", value: "C" },
+  { seg: "SVG", value: "SVG" }
 ];
 
 export const priceToString = (price: number) => {
@@ -14,4 +15,26 @@ export const getDay = (day: string) => {
   const date = new Date(day);
 
   return `${date.getMonth()}월 ${date.getDay()}일 (${days[date.getDate()]})`;
+};
+
+export const getDayDifference = (day: Date) => {
+  const now = new Date();
+
+  const todayDate = new Date(
+    now.getFullYear(),
+    now.getMonth() + 1,
+    now.getDate()
+  );
+
+  const createdDay = new Date(day);
+  const createdDate = new Date(
+    createdDay.getFullYear(),
+    createdDay.getMonth() + 1,
+    createdDay.getDate()
+  );
+
+  const def =
+    (todayDate.getTime() - createdDate.getTime()) / (1000 * 60 * 60 * 24);
+
+  return def < 1 ? true : false;
 };
