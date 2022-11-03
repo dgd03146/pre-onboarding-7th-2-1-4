@@ -9,5 +9,10 @@ export const carState = atom<ICar[] | undefined>({
 
 export const segState = atom<string>({
   key: recoilKeys.seg,
-  default: "A"
+  default: ""
+});
+
+export const typeState = atom<string>({
+  key: recoilKeys.type,
+  default: ""
 });

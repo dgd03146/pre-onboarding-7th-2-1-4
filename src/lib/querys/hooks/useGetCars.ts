@@ -1,22 +1,13 @@
-import { useError } from "@/lib/hooks/useError";
-import { carApi } from "./../../api/api";
-import { queryKeys } from "../keys/Keys";
-import { useQuery } from "@tanstack/react-query";
+import { typeState, segState, useError, carApi, queryKeys } from "@/lib";
 import { ICar } from "@/lib/interfaces/interface";
+import { useQuery } from "@tanstack/react-query";
 import { useRecoilValue } from "recoil";
-import { segState } from "@/lib/recoil/RecoilState";
 
-const fetchCars = async (seg: string) => {
+const fetchCars = async (seg: string, type: string) => {
   try {
-    if (seg === "A") {
-      const res = await carApi.getAllCars();
-      const cars: ICar[] = res.data.payload;
-      return cars;
-    } else {
-      const res = await carApi.getCars(seg);
-      const cars: ICar[] = res.data.payload;
-      return cars;
-    }
+    const res = await carApi.getCars(seg, type);
+    const cars: ICar[] = res.data.payload;
+    return cars;
   } catch (error: unknown) {
     const title =
       error instanceof Error ? error.message : "error connecting to error ";
@@ -26,8 +17,11 @@ const fetchCars = async (seg: string) => {
 
 export const useGetCars = () => {
   const seg = useRecoilValue(segState);
+  const type = useRecoilValue(typeState);
 
-  const { data } = useQuery([queryKeys.cars, seg], () => fetchCars(seg));
+  const { data } = useQuery([queryKeys.cars, seg, type], () =>
+    fetchCars(seg, type)
+  );
 
   return { data };
 };

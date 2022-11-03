@@ -28,7 +28,6 @@ const Container = styled.button<{
   active: boolean | undefined;
 }>`
   padding: 5px 10px;
-  gap: 10px;
   border-radius: 62px;
   border: none;
   font-style: normal;

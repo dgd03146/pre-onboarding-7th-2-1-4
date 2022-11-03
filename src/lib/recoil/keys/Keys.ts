@@ -1,4 +1,5 @@
 export const recoilKeys = {
   cars: "cars",
-  seg: "seg"
+  seg: "seg",
+  type: "type"
 };

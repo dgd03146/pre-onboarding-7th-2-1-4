@@ -1,9 +1,9 @@
 export const categories = [
-  { seg: "전체", value: "A" },
+  { seg: "전체", value: "" },
   { seg: "대형", value: "E" },
   { seg: "중형", value: "D" },
   { seg: "소형", value: "C" },
-  { seg: "SVG", value: "SVG" }
+  { seg: "SUV", value: "SUV" }
 ];
 
 export const priceToString = (price: number) => {
