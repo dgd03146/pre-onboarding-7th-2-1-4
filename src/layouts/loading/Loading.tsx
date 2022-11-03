@@ -1,16 +1,36 @@
+import { Category } from "@/components";
 import { ClipLoader } from "react-spinners";
 import styled from "styled-components";
+import { Header } from "../header/Header";
 
 export const Loading = () => {
   return (
     <Container>
-      <h2>불러오는 중</h2>
-      <ClipLoader color="gray" size={20} speedMultiplier={0.7} />
+      <Header />
+      <Category />
+      <LoadingContainer>
+        <h2>불러오는 중</h2>
+        <ClipLoader color="gray" size={20} speedMultiplier={0.7} />
+      </LoadingContainer>
     </Container>
   );
 };
 
 const Container = styled.div`
+  margin: 0 auto;
+  border: 1px solid #ececec;
+
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+  min-height: 100vh;
+
+  max-width: 450px;
+  min-width: 360px;
+`;
+
+const LoadingContainer = styled.div`
   height: 100vh;
   display: flex;
 

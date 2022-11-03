@@ -16,3 +16,8 @@ export const typeState = atom<string>({
   key: recoilKeys.type,
   default: ""
 });
+
+export const clickState = atom<string>({
+  key: recoilKeys.click,
+  default: ""
+});

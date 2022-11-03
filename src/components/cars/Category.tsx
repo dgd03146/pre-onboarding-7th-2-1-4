@@ -2,11 +2,11 @@ import styled from "styled-components";
 import { useState } from "react";
 import { useSetRecoilState, useRecoilState } from "recoil";
 import { Button, Divider } from "@/layouts";
-import { categories, segState, typeState } from "@/lib";
+import { categories, clickState, segState, typeState } from "@/lib";
 
 const Category = () => {
-  const [clicked, setClicked] = useState("");
   const setSeg = useSetRecoilState(segState);
+  const [clicked, setClicked] = useRecoilState(clickState);
   const [type, setType] = useRecoilState(typeState);
 
   const selectSizeHandler = (segment: string) => {
