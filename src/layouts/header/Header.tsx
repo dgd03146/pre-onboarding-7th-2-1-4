@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { ReactComponent as Back } from "../../../public/assets/back.svg";
 
 interface HeaderProps {
   page?: boolean;
@@ -11,7 +12,6 @@ export const Header = ({ page }: HeaderProps) => {
 
   return (
     <Container page={page}>
-      {/* TODO: svg 파일 따로 정리하기 */}
       {page && (
         <button
           className="back"
@@ -19,6 +19,7 @@ export const Header = ({ page }: HeaderProps) => {
             navigate(-1);
           }}
         >
+          <Back />
           <svg
             width="24"
             height="24"
