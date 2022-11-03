@@ -1,29 +1,36 @@
 import styled from "styled-components";
 import { ICar } from "@/lib/interfaces/interface";
 import { useMemo } from "react";
+import { useNavigate } from "react-router-dom";
+import { Divider } from "@/layouts";
+import { priceToString } from "@/lib/constants/constants";
 
 interface CarProps {
   car: ICar;
 }
 
-function priceToString(price: number) {
-  return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
 const Car = ({ car }: CarProps) => {
+  const navigate = useNavigate();
   const price = useMemo(() => priceToString(car.amount), []);
   const { attribute: at } = car;
 
   return (
-    <Container>
-      <CarInfo>
-        <h2>{at.brand}</h2>
-        <h2>{at.name}</h2>
-        <p>{`${at.segment} / ${at.fuelType}`}</p>
-        <p>{`월 ${price}원 부터`}</p>
-      </CarInfo>
-      <CarImage src={at.imageUrl} />
-    </Container>
+    <>
+      <Container
+        onClick={() => {
+          navigate(`/detail:${car.id}`, { state: car });
+        }}
+      >
+        <CarInfo>
+          <h2>{at.brand}</h2>
+          <h2>{at.name}</h2>
+          <p>{`${at.segment} / ${at.fuelType}`}</p>
+          <p>{`월 ${price}원 부터`}</p>
+        </CarInfo>
+        <CarImage src={at.imageUrl} />
+      </Container>
+      <Divider />
+    </>
   );
 };
 
@@ -33,6 +40,11 @@ const Container = styled.li`
   padding: 20px;
   display: flex;
   justify-content: space-between;
+
+  cursor: pointer;
+  &:hover {
+    background-color: #ececec;
+  }
 `;
 
 const CarInfo = styled.div`
