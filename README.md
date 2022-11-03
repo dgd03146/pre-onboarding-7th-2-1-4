@@ -18,6 +18,7 @@
 
 ### 디렉토리 구조
 
+```tsx
 📦src
 ┣ 📂components
 ┃ ┣ 📂cars
@@ -43,6 +44,7 @@
 ┣ 📂pages
 ┃ ┣ 📂cars
 ┣ 📂routes
+```
 
 ### husky script
 
