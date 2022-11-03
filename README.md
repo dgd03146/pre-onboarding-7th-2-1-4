@@ -1,18 +1,50 @@
-# TypeScript CRA with husky
+## 원티드 2-1주차 과제
 
-## 설치
+### 목표
 
-```shell
-npm install
-```
+- B2C 차량대여 서비스
 
-## 실행
+### 배포링크
 
-```shell
-npm start
-```
+[링크](https://pre-onboarding-7th-2-1-4.web.app/)
 
-## husky script
+### 구현 사항
+
+- [x] 차량 리스트
+- [x] 차량이 없을 때 처리
+- [x] 차량 불러오는 중 처리
+- [x] 차량 상세
+- [ ] SEO
+
+### 디렉토리 구조
+
+📦src
+┣ 📂components
+┃ ┣ 📂cars
+┃ ┣ 📂notFound
+┣ 📂layouts
+┃ ┣ 📂button
+┃ ┣ 📂divider
+┃ ┣ 📂header
+┃ ┣ 📂layout
+┃ ┣ 📂loading
+┣ 📂lib
+┃ ┣ 📂api
+┃ ┣ 📂constants
+┃ ┣ 📂hooks
+┃ ┣ 📂interfaces
+┃ ┣ 📂querys
+┃ ┃ ┣ 📂hooks
+┃ ┃ ┣ 📂keys
+┃ ┣ 📂recoil
+┃ ┃ ┣ 📂keys
+┃ ┣ 📂seo
+┃ ┣ 📂styles
+┣ 📂pages
+┃ ┣ 📂cars
+┣ 📂routes
+
+### husky script
 
 - ### pre-commit
   commit 전에 prettier 적용
@@ -33,7 +65,7 @@ npm start
 }
 ```
 
-## eslint 설정
+### eslint 설정
 
 ```json
 // .eslintrc.json
@@ -68,7 +100,7 @@ npm start
 }
 ```
 
-## 절대경로 설정
+### 절대경로 설정
 
 ### tsconfig.json
 
